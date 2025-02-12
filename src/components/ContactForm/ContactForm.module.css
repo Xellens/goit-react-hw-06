@@ -1,0 +1,44 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.label {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #57b846; /* колір при фокусі */
+  box-shadow: 0 0 0 2px rgba(87, 184, 70, 0.2);
+}
+
+.error {
+  color: #d8000c;
+  font-size: 14px;
+}
+
+.button {
+  align-self: flex-start;
+  padding: 8px 14px;
+  background-color: #57b846;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #45a437;
+}

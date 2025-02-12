@@ -1,0 +1,39 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  transition: box-shadow 0.2s ease;
+}
+
+.item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.name {
+  font-weight: 600;
+  margin-right: 10px;
+  color: #333;
+}
+
+.number {
+  color: #777;
+}
+
+.button {
+  background-color: #f44336;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #d32f2f;
+}
