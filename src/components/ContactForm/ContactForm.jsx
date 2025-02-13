@@ -1,7 +1,8 @@
-import s from "./ContactForm.module.css";
+import { useDispatch } from "react-redux";
+import { addContact } from "../../redux/contactsSlice";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-import PropTypes from "prop-types";
+import s from "./ContactForm.module.css";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
@@ -14,15 +15,13 @@ const validationSchema = Yup.object().shape({
     .max(50, "Максимум 50 символів"),
 });
 
-function ContactForm({ onAddContact }) {
-  const initialValues = {
-    name: "",
-    number: "",
-  };
+function ContactForm() {
+  const dispatch = useDispatch();
+
+  const initialValues = { name: "", number: "" };
 
   const handleSubmit = (values, { resetForm }) => {
-    onAddContact(values.name, values.number);
-
+    dispatch(addContact(values.name, values.number));
     resetForm();
   };
 
@@ -46,9 +45,5 @@ function ContactForm({ onAddContact }) {
     </Formik>
   );
 }
-
-ContactForm.propTypes = {
-  onAddContact: PropTypes.func.isRequired,
-};
 
 export default ContactForm;
